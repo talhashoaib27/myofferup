@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
+  
 
+  devise_for :users
+  resources :items
 
   authenticated :user do
     root 'home#dashboard', as: :authenticated_root

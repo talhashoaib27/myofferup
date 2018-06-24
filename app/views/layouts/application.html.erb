@@ -39,6 +39,12 @@
           <li class="nav-item">
             <a class="nav-link" href="<%= authenticated_root_path %>">Team</a>
           </li> -->
+
+          <% if current_user %>
+	          <li class="nav-item">
+              <a class="nav-link" href="<%= items_path %>">Items</a>
+            </li>
+	        <% end %>
           <% unless  current_user %>
           	<li class="nav-item">
             <a class="nav-link" href="<%= new_session_path(User) %>">Login</a>
