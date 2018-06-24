@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Post Pilots</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/PostPilots-design-blocks/1.0.2/css/PostPilots_blocks.min.css">
+  <%= stylesheet_link_tag    'main.min', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+<header class="bg-dark" data-block-type="headers" data-id="1">
+  <div class="container">
+    <nav class="navbar navbar-expand-md">
+      <a class="navbar-brand" href="<%= authenticated_root_path %>">
+          Post Pilots
+        </a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav11" aria-controls="navbarNav11" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav11">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="<%= authenticated_root_path %>">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="<%= authenticated_root_path %>">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<%= authenticated_root_path %>">Pricing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<%= authenticated_root_path %>">Team</a>
+          </li> -->
+          <% unless  current_user %>
+          	<li class="nav-item">
+            <a class="nav-link" href="<%= new_session_path(User) %>">Login</a>
+            </li>
+          <%end%>
+          
+        </ul>
+
+        <% if current_user %>
+          <%= link_to('Logout', destroy_user_session_path, method: :delete, class: 'btn btn-white btn-empty ml-md-3') %>
+        <% else %>
+       	 	<a class="btn btn-white btn-empty ml-md-3" href="<%= new_registration_path(User) %>">Sign Up</a>
+        <% end %>
+
+      </div>
+    </nav>
+  </div>
+</header>
+
+
+
+<%= yield %>
+
+<footer class="fdb-block footer-small bg-dark fp-active" data-block-type="footers" data-id="4">
+  <div class="container">
+    <div class="row text-center align-items-center">
+      <div class="col">
+        <ul class="nav justify-content-center">
+          <li class="nav-item">
+            <a class="nav-link active" href="<%= authenticated_root_path %>">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<%= authenticated_root_path %>">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<%= authenticated_root_path %>">Privacy Policy</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<%= authenticated_root_path %>">Terms</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<%= authenticated_root_path %>">About</a>
+          </li>
+        </ul>
+
+        <p class="text-h5 mt-5">© 2017-2018 PostPilots</p>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+    
+</body>
+</html>

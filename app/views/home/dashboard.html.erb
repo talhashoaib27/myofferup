@@ -1,0 +1,24 @@
+<section class="fdb-block bg-gray" data-block-type="forms" data-id="1" draggable="true">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12  col-md-10 col-lg-8 col-xl-6 text-center">
+        <img alt="image" height="40" src="https://editor-latest.s3.amazonaws.com/design-blocks/block_images/img_round.svg">
+        <h1>Post Pilots</h1>
+        <p class="text-h3">ENGINE IS OFF. 
+        	<%#= link_to "#{@engine.started? ? 'Stop' : 'Start'}", toggle_engine_path, class: "btn #{ @engine.started? ? 'btn-danger' : 'btn-success' }" %>
+          <a href="javascript:void(0);" class="btn btn-success">TURN ON</a>
+        </p>
+        
+        <!-- <p class="text-h5">
+        	<%#= link_to "Start Manual Sync", engine_sync_path, class: "btn btn-warning form-control" %>
+          <a href="javascript:void(0);" class="btn btn-warning">Start Manual Posting</a>
+
+        </p>
+        <p class="text-h5">
+          <%#= @sync_state.started? ? 'Syncing in process...' : 'Syncing has completed successfully/No sync is in process.' %>
+          No sync
+        </p> -->
+      </div>
+    </div>
+  </div>
+</section>

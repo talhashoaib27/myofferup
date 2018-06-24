@@ -1,0 +1,33 @@
+<section class="fdb-block" style="background-image: url(<%= image_path 'bg_0.svg' %>)" data-block-type="forms" data-id="2" draggable="true">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8 col-lg-7 col-xl-5 text-center">
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="fdb-box fdb-touch">
+            <div class="row">
+              <div class="col">
+                <h1>Log In</h1>
+              </div>
+            </div>
+            <div class="row mt-4">
+              <div class="col">
+                <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", placeholder: "Email" %>
+              </div>
+            </div>
+            <div class="row mt-4">
+              <div class="col">
+                <%= f.password_field :password, autocomplete: "off", class: "form-control mb-1", placeholder: "Password" %>
+                <!-- <p class="text-right"><a href="https://www.froala.com">Recover Password</a></p> -->
+              </div>
+            </div>
+            <div class="row mt-4">
+              <div class="col">
+                <%= f.submit "Log in", class: "btn" %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
