@@ -30,6 +30,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Unicorn as the app server
 # gem 'unicorn'
+gem "passenger"
 
 gem 'bootstrap', '~> 4.1.1'
 
