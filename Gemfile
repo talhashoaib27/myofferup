@@ -36,6 +36,10 @@ gem 'bootstrap', '~> 4.1.1'
 # authentication
 gem 'devise'
 
+
+# environment variables
+gem "figaro"
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
